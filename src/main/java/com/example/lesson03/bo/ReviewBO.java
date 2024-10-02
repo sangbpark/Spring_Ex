@@ -1,5 +1,6 @@
 package com.example.lesson03.bo;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,13 @@ public class ReviewBO {
 	
 	public int addReviewAsField(int storeId, String menu, String userName, Double point, String review) {
 		return reviewMapper.insertReviewAsFiled(storeId, menu, userName, point, review);
+	}
+	
+	public int updateReviewById(int id, String review) {
+		return reviewMapper.updateReviewById(id, review);
+	}
+	
+	public void deleteReviewById(int id) {
+		reviewMapper.deleteReviewById(id);
 	}
 }
