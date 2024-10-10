@@ -11,7 +11,7 @@
 			, `email`
 			, `introduce`
 			, `createdAt`
-			 ,`updatedAt`
+			, `updatedAt`
  		)
  		VALUES
  		(
@@ -23,4 +23,19 @@
  			, NOW()
  		)
  	</insert>
+ 	<select id = "selectLatestUser"
+ 	resultType = "com.example.lesson04.domain.User">
+ 		select 
+ 			`id`
+ 			,`name`
+			, `yyyymmdd`
+			, `email`
+			, `introduce`
+			, `createdAt`
+			, `updatedAt`
+ 		FROM
+ 			`new_user`
+ 		ORDER BY `id` DESC
+ 		LIMIT 1
+ 	</select>
  </mapper>
