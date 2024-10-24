@@ -32,4 +32,12 @@ public class Lesson07Ex01RestController {
 		// id가 4인 dreamJob을 디자이너로 변경
 		return studentBO.updateStudentDreamJobById(4, "디자이너");
 	}
+	
+	// D:delete
+	@GetMapping("/delete")
+	public String delete() {
+		// id 5번 삭제
+		studentBO.deleteStudentById(5);
+		return "삭제 완료";
+	}
 }
