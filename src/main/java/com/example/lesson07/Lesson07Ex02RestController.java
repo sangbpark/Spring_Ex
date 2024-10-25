@@ -47,4 +47,10 @@ public class Lesson07Ex02RestController {
 		// 9) id의 구간이 2 ~ 5 조회
 		return studentRepository.findByIdBetween(2, 6);
 	}
+	
+	@GetMapping("/select2")
+	public List<StudentEntity> select2() {
+		// 장래희망이 'sdf' 조회
+		return studentRepository.findByDreamJob("sdf");
+	}
 }
